@@ -1,5 +1,10 @@
-var account_keys = {
+let account_keys = {
     "ACCOUNT_ADDRESS_1": "ACCOUNT_PRIVATE_KEY_1",
-    "0xca35b7d915458ef540ade6068dfe2f44e8fa733c": "",
-    "0x14723a09acff6d2a60dcdf7aa4aff308fddc160c": ""
+    "0xe888D1cFC764E8518CF7E1581359E99C068eb877": "4f37a4c2117647f9f851d1bedea245aa18586db201b02e6ff1f2ae32de8bb7b2",
+    "0x1C37465572E8DA0DE416252341af652359825820": "c3730d4cc817d5dbc59f251607461fbdfd3c830c15139950a5bfda30c1245114",
+    "0xcA6888513d8BC1422bDeB450f5482F3A7c76BdFe": "d9871f31733503e426517a4bb87d61fcb9ba81524e33c1d8566782ebca4471e7"
 };
+
+var cred = {
+    account_keys: account_keys
+}

@@ -12,7 +12,7 @@ var updateDeployedContractsList = function(_contracts) {
     $("#deployed_contracts_list").html(_items);
 }
 var updateStatusMsg = function(_status) {
-    $("$status_paragraph").html(_status);
+    $("#status_paragraph").html(_status);
 }
 
 // Triggers
@@ -23,8 +23,8 @@ var updateEmail = function() {
 }
 var getEmailAddress = function() {
     let _smart_contract_textbox = $("#smart_contract_2_textbox").val();
-    console.log('web3 to invoke contract');
-    console.log('updateStatusMsg()');
+    let _email = utilities.hexToString(window.contractInstance.getEmail.call());
+    updateStatusMsg(_email);
 }
 var allowAccess = function() {
     let _smart_contract_textbox = $("#smart_contract_textbox").val();
@@ -38,8 +38,14 @@ var deployContract = function() {
     console.log('web3 to deploy contract');
     console.log('deployed_contracts.push()');
     console.log('updateStatusMsg()');
-    updateDeployedContractsList(window.deployed_contracts);    
+    updateDeployedContractsList(config.deployed_contracts);    
 }
 $(document).ready(function() {
-    setAccountsDropdown(window.accounts);
+    setAccountsDropdown(config.accounts);
+
+    let provider = new Web3.providers.HttpProvider(config.node_url);
+    let web3 = new Web3(provider);
+
+    let contract = web3.eth.contract(config.abi);
+    window.contractInstance = contract.at(config.contract_address);
 });

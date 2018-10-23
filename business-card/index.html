@@ -15,14 +15,14 @@
         <hr/>
 
         <!-- Deploy new contract -->
-        <h1>Deploy new contract</h1>
+        <s><h1>Deploy new contract</h1>
         Name: <input type="text" id="name_textbox" /> <br/>
         Email: <input type="text" id="email_textbox" /> <br/>
-        <button onclick="deployContract()">Deploy Contract</button>
+        <button onclick="deployContract()" disabled>Deploy Contract</button>
         <h2>Deployed Contracts:</h2>
         <ul id="deployed_contracts_list">
             <li>N/A</li>
-        </ul>
+        </ul></s>
         <hr/>
 
         <!-- Allow Access -->
@@ -48,8 +48,10 @@
             src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous"></script>
+            <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
         <script type="text/javascript" src="cred.js"></script>
         <script type="text/javascript" src="config.js"></script>
+        <script type="text/javascript" src="utilities.js"></script>
         <script type="text/javascript" src="index.js"></script>
   </body>
 </html>
